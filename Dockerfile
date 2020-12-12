@@ -1,11 +1,5 @@
-FROM ghcr.io/linuxserver/baseimage-mono:LTS
-
-# set version label
-ARG BUILD_DATE
-ARG VERSION
-ARG SONARR_VERSION
-LABEL build_version="version:- ${VERSION} Build-date:- ${BUILD_DATE}"
-LABEL maintainer="danofun"
+FROM ghcr.io/linuxserver/baseimage-alpine:3.12 as buildstage
+############## build stage ##############
 
 # set environment variables
 ENV USERNAME=none
